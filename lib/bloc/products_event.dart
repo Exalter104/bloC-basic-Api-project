@@ -6,3 +6,9 @@ sealed class ProductsEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+// is Loaded event occured ? yes.
+class ProductsLoadedEvent extends Equatable {
+  @override
+  List<Object?> get props => [];
+}

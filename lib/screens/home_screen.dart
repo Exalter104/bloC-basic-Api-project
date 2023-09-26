@@ -1,4 +1,4 @@
-import 'package:block_basic_project/models/screens/product_Screen.dart';
+import 'package:block_basic_project/screens/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

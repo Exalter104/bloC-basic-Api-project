@@ -1,6 +1,6 @@
 part of 'products_bloc.dart';
 
-sealed class ProductsState extends Equatable {
+abstract class ProductsState extends Equatable {
   const ProductsState();
 
   @override
@@ -14,23 +14,22 @@ sealed class ProductsState extends Equatable {
 NOTE(.-.for Calling-Api)
 */
 
-final class ProductsInitial extends ProductsState {}
+class ProductsInitial extends ProductsState {}
 
 // Loading state using progress indicator,
-final class ProductsLoadingState extends ProductsState {}
+class ProductsLoadingState extends ProductsState {}
 
 //Loaded state,
-final class ProductsLoadedState extends ProductsState {
+class ProductsLoadedState extends ProductsState {
   final List<ProductModel> productModel;
   const ProductsLoadedState(this.productModel);
   @override
-  List<Object> get props => [];
+  List<Object> get props => [ProductModel];
 }
 
 //Error state
-final class ProductsErrorState extends ProductsState {
+class ProductsErrorState extends ProductsState {
   final String errorMessage;
-
   const ProductsErrorState(this.errorMessage);
   @override
   List<Object> get props => [errorMessage];
