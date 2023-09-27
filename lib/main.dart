@@ -1,4 +1,5 @@
-import 'package:block_basic_project/bloc/products_bloc.dart';
+import 'package:block_basic_project/bloc/newproduct_bloc.dart';
+import 'package:block_basic_project/repo/reppository.dart';
 import 'package:block_basic_project/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       // we calling loaded event
-      create: (context) => ProductsBloc()..add(ProductsLoadedEvent()),
+      create: (context) => NewproductBloc(ProductRepository()),
       child: MaterialApp(
           title: 'BloC Application',
           theme: ThemeData(
